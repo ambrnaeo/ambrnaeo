@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #dbdbdb;
+  font: 76% Verdana, Arial, Helvetica, sans-serif;
+}
+
+#main {
+	position: absolute;
+	left: 439px;
+	top: 82px;
+	width: 600px;
+	border: solid #777777 2px;
+	background-color: #7385a3;
+	color: #ffffff;
+	padding: 8px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+.warning {
+	position: relative;
+	background-color: #ff3333;
+	margin: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	color: #ffffff;
+	border: solid #ff0000 6px;
+	font-weight: bold;
+}
+
+.warningimage {
+	float: left;
+	margin: 5px;
+}
+
+.warning P {
+	position: relative;
+	float: left;
+}
+
+.inlist {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+}
+
+.inlistsingle {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;	
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+}
+
+#episode1 {
+	position: relative;
+	display: block;
+	left: -23px;
+	border-top: solid #777777 2px;
+	border-right: solid #777777 2px;
+	border-bottom: solid #777777 2px;
+	border-left: solid #ffffff 0px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 9px;
+	float: left;
+	width: 588px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-bottom-right-radius:     10px;
+
+
+}
+
+#episode2 {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;	
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+}
+
+#episode3 {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+#episode4 {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+}
+
+#episode5 {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+}
+
+.inlistfirst {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+.inlistlast {
+	position: relative;
+	display: block;
+	width: 588px;
+	border: solid #777777 1px;
+	background-color: #dbdbdb;
+	color: #000000;
+	padding: 5px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+}
+
+.currentlyplaying {
+	position: relative;
+	display: block;
+	left: -23px;
+	border-top: solid #777777 2px;
+	border-right: solid #777777 2px;
+	border-bottom: solid #777777 2px;
+	border-left: solid #ffffff 0px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	float: left;
+	width: 588px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-bottom-right-radius:     10px;
+
+
+}
+
+.selectedstation {
+	position: relative;
+	display: block;
+	left: -23px;
+	border-top: solid #777777 2px;
+	border-right: solid #777777 2px;
+	border-bottom: solid #777777 2px;
+	border-left: solid #ffffff 0px;
+	background-color: #7385a3;
+	color: #ffffff;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 12px;
+	float: left;
+	width: 150px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-bottom-right-radius:     10px;
+}
+
+
+
+.aboutbox {
+	border: solid #000000 1px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 10px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+.listingImage {
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	width: 80px;
+	margin: 5px;
+}
+
+.listingNetworkImage {
+	position: absolute;
+	left: 510px;
+	top: 0px;
+	margin: 5px;
+}
+
+.listingText {
+	position: relative;
+	left: 80px;
+        width: 510px;
+	top: 0px;
+}
+
+.listingMain {
+	position: relative;
+	min-height: 90px;
+}
+
+.listingTitle {
+	position: relative;
+	font-weight: bold;
+	margin: 5px;
+	font-size: 1.1em;
+
+}
+
+.listingShortSynopsis {
+	position: relative;
+	left: 170px;
+        width: 335px;
+	top: 5px;
+	margin-top: 0px;
+}
+
+.listingSmallImage {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+}
+
+.container {
+	position: relative;
+}
+
+.titleandduration {
+	position: relative;
+	width: 290px;
+	padding-left: 90px;
+	padding-top: 5px;
+}
+
+.bodytext {
+	margin-top: 10px;
+}
+
+.playerholder {
+	position: relative;
+	background-color: #dbdbdb;
+}
+
+#sidebar-left {
+	position: absolute;
+	left: 8px;
+	top: 94px;
+	width: 400px;
+	border: solid #777777 2px;
+	background-color: #ffffff;
+	padding: 8px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+#sidebar-right {
+	position: absolute;
+	left: 1070px;
+	top: 82px;
+	width: 150px;
+	border: solid #777777 2px;
+	background-color: #ffffff;
+	padding: 8px;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+#currentlyplayingbox {
+	padding: 8px;
+	border: solid 2px #444444;
+	margin-bottom: 10px;
+	background-color: #dbdbdb;
+	-moz-border-radius-topright:    10px 10px;
+	-moz-border-radius-bottomright:    10px 10px;
+	-moz-border-radius-topleft:    10px 10px;
+	-moz-border-radius-bottomleft:    10px 10px;
+	-webkit-border-bottom-right-radius:     10px;
+	-webkit-border-bottom-left-radius:     10px;
+	-webkit-border-top-right-radius:     10px;
+	-webkit-border-top-left-radius:     10px;
+}
+
+#header {
+	position: absolute;
+	top: 0px;
+	height: 80px;
+	left: 20px;
+	width: 1200px;
+	font-size: 30px;
+}
+
+#loginform {
+	position: absolute;
+	bottom: 80px;
+	left: 40%;
+}
+
+
+
+.formbutton {
+	position: absolute;
+	right: 0px;
+}
+
+#logout {
+	position: absolute; 
+	right: 5px;
+	top: 5px;
+	font-size: 16px;
+	text-decoration: none;	
+}
+
+#prefbuttons {
+	position: relative;
+	border: none;
+	background-color: #dbdbdb;
+	border-top: solid 5px #dbdbdb;
+	border-bottom: solid 5px #dbdbdb;
+	width: 382px;
+}
+
+#prefbuttons img {
+	border: none;
+} 

@@ -1,14 +1,19 @@
 Ambrnaeo::Application.routes.draw do
   
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions, :only => [ :new, :create, :destroy ]
   
   match "/signup", :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
+  match '/vox', :to => 'pages#vox'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  
   get "pages/home"
   get "pages/contact"
   get "pages/about"
+  get "pages/vox"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
