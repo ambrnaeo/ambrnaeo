@@ -21,7 +21,7 @@ describe "LayoutLinks" do
     get '/signup'
     response.should have_selector('title', :content => "Sign up")
   end
-  
+    
   describe "when not signed in" do
 
     it "should have a signin link" do

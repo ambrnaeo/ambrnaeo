@@ -1,18 +1,25 @@
 # == Schema Information
-# Schema version: 20110210234409
+# Schema version: 20110216230302
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  channel_id         :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
 #
 
 require 'digest'
 
 class User < ActiveRecord::Base
+  
+  belongs_to :channel
+  has_many :favourites
+  
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
   before_save :encrypt_password

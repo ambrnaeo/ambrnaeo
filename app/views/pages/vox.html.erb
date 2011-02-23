@@ -3,39 +3,16 @@
 <div id="update"></div>
 <div id="skipping"></div>
 <div id="player">
-<h3>You and Yours: 23/03/2010</h3>
-<div class="playerholder"><embed class="embedplayer" type="application/x-shockwave-flash" src=http://www.bbc.co.uk/emp/9player.swf?t=8m42s" style="" id="embeddedPlayer_8140668" name="embeddedPlayer_8140668" bgcolor="#000000" quality="low" wmode="transparent" allowfullscreen="false" allowScriptAccess="always" flashvars="config_settings_language=default&playlist=http://www.bbc.co.uk/iplayer/playlist/b00rd8kh&playlist=http://www.bbc.co.uk/iplayer/playlist/b00rd8kh&config_settings_autoPlay=true"  width="382" height="135"></div>
+  
+  
+<h3><%= @programmes.first.title %></h3>
+<div class="playerholder"><embed class="embedplayer" type="application/x-shockwave-flash" src=http://www.bbc.co.uk/emp/9player.swf?t=8m42s" style="" id="embeddedPlayer_8140668" name="embeddedPlayer_8140668" bgcolor="#000000" quality="low" wmode="transparent" allowfullscreen="false" allowScriptAccess="always" flashvars="config_settings_language=default&playlist=http://www.bbc.co.uk/iplayer/playlist/<%= @programmes.first.pid %>&playlist=http://www.bbc.co.uk/iplayer/playlist/<%= @programmes.first.pid %>&config_settings_autoPlay=true"  width="382" height="135"></div>
 </div>
 
 <div id="prefbuttons"><a href="javascript:love()"><span id="clicklove"><img src="lovenormal.gif" alt="love it"></span></a><span id="loveclicked"></span><a href="javascript:like()"><span id="clicklike"><img src="likenormal.gif" alt="like it"></span></a><span id="likeclicked"></span><a href="javascript:dislike()"><span id="clickdislike"><img src="dislikenormal.gif" alt="dislike it"></span></a><span id="dislikeclicked"></span><a href="javascript:hate()"><span id="clickhate"><img src="hatenormal.gif" alt="hate it"></span></a><span id="hateclicked"></span> <span id="clickforward"><a href="javascript:next()"><img src="forward.gif"></a></span></div>
 </div>
- <script type="text/javascript">
-function hideOnLoad(element) {
-	document.getElementById(element).style.display = "none";
-}
 
-function showOnLoad(element) {
-	document.getElementById(element).style.display = "";
-}
-
-function toggle(element,element2,element3) {
-	if (document.getElementById(element).style.display == "none") {
-		document.getElementById(element).style.display = "";
-	} else {
-		document.getElementById(element).style.display = "none";
-	}
-	if (document.getElementById(element2).style.display == "none") {
-		document.getElementById(element2).style.display = "";
-	} else {
-		document.getElementById(element2).style.display = "none";
-	}
-	if (document.getElementById(element3).style.display == "none") {
-		document.getElementById(element3).style.display = "";
-	} else {
-		document.getElementById(element3).style.display = "none";
-	}
-}
-</script><div id="morebutton" style="display: none;"><a href="javascript:toggle('nphide','morebutton','lessbutton')">more &gt; &gt;</a></div>
+<div id="morebutton" style="display: none;"><a href="javascript:toggle('nphide','morebutton','lessbutton')">more &gt; &gt;</a></div>
 <div id="lessbutton" style="display: none"><a href="javascript:toggle('nphide','morebutton','lessbutton')">&lt; &lt; less</a></div>
 <br>
 <div id="nphide"><div class="bodytext"><div class="container">
@@ -50,66 +27,91 @@ function toggle(element,element2,element3) {
 
 <div id="main">
 
+<%
+for index in 0..4
+  programme = @programmes[index]
+%>
 
-<div id="episode1">
-		<div class="listingTitle">You and Yours: 23/03/2010</div>
+<% if index == 1 %>
+
+  <p><b>Next:</b></p>
+
+<% elsif index == 2 %>
+
+  <p><b>Then:</b></p>
+
+<% end %>
+
+<div id="episode<%= index + 1 %>">
+		<div class="listingTitle"><%= programme.title %></div>
 		<div class="listingMain">
 
-			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/b00rd8kh_150_84.jpg" alt="You and Yours"></div>
-			<div class="listingShortSynopsis"><p>         Do we expect too much of our GPs? Are you sympathetic to GP stress?       </p><p>53 minutes / <a href="http://www.bbc.co.uk/programmes/b00rd8kh">BBC programme page</a><br>Factual, Consumer, Radio</p></div>
+			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/<%= programme.pid %>_150_84.jpg" alt="<%= programme.title %>"></div>
+			<div class="listingShortSynopsis"><p><%= programme.short_synopsis %></p><p><%= programme.duration %> minutes / <a href="http://www.bbc.co.uk/programmes/<%= programme.pid %>">BBC programme page</a><br>Factual, Consumer, Radio</p></div>
 			<div class="listingNetworkImage"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></div>
 		</div>
 	</div>
-	<p><b>Next:</b></p>
 
-	<div id="episode2">
-		<div class="listingTitle">Money Box Live: 28/04/2010</div>
-		<div class="listingMain">
-			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/b00s3fzm_150_84.jpg" alt="Money Box Live"></div>
-			<div class="listingShortSynopsis"><p>         Paul Lewis and a panel of guests answer calls on financial issues.       </p><p>30 minutes / <a href="http://www.bbc.co.uk/programmes/b00s3fzm">BBC programme page</a><br>Factual, Money, Radio</p></div>
-			<div class="listingNetworkImage"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></div>
+<%
+end
+%>
+<h3>
+  About this channel: <br/><%= @current_channel.description %>
+</h3>
+  </div>
 
-		</div>
-	</div>
-	<p><b>Then:</b></p>
-	<div id="episode3">
-		<div class="listingTitle">Money Box Live: 07/07/2010</div>
-		<div class="listingMain">
-			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/b00sxj2b_150_84.jpg" alt="Money Box Live"></div>
-			<div class="listingShortSynopsis"><p>         Vincent Duggleby and a panel of guests answer calls on financial issues.       </p><p>30 minutes / <a href="http://www.bbc.co.uk/programmes/b00sxj2b">BBC programme page</a><br>Factual, Money, Radio</p></div>
 
-			<div class="listingNetworkImage"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></div>
-		</div>
-	</div>
-	<div id="episode4">
-		<div class="listingTitle">Money Box Live: 26/05/2010</div>
-		<div class="listingMain">
-			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/b00sg1hp_150_84.jpg" alt="Money Box Live"></div>
-			<div class="listingShortSynopsis"><p>         Vincent Duggleby and a panel of guests answer calls on student finance.       </p><p>30 minutes / <a href="http://www.bbc.co.uk/programmes/b00sg1hp">BBC programme page</a><br>Factual, Money, Radio</p></div>
-
-			<div class="listingNetworkImage"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></div>
-		</div>
-	</div>
-	<div id="episode5">
-		<div class="listingTitle">You and Yours: 01/06/2010</div>
-		<div class="listingMain">
-			<div class="listingSmallImage"><img src="http://node2.bbcimg.co.uk/iplayer/images/episode/b00shqls_150_84.jpg" alt="You and Yours"></div>
-			<div class="listingShortSynopsis"><p>         Consumer news and issues with Julian Worricker. Does local government really need reform?       </p><p>57 minutes / <a href="http://www.bbc.co.uk/programmes/b00shqls">BBC programme page</a><br>Factual, Consumer, Radio</p></div>
-
-			<div class="listingNetworkImage"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></div>
-		</div>
-	</div></div>
 </div>
 
+
+
 <div id="sidebar-right">
-	<div><p><b><a href="dologin.php?logout=TRUE">Log Out</a></b></p></div>
 	<div><p><b><br>Your Station:</b></p></div>
 
-		<div class="selectedstation"><p><b>Ben's station</b></p></div>
+		<div class="<%= find_channel_class(@user.channel.id) %>">
+		  <p>
+        <% if (find_channel_class(@user.channel.id).eql?("unselectedstation")) %>
+          <%= link_to @user.channel.name, "/vox/#{@user.channel.id}" %>
+        <% else %>
+          <b>
+           <%= @user.channel.name %>       
+          </b>
+        <% end %>
+		  </p>
+		</div>
 
-	<div><p><b><br>Friends' Stations:</b></p></div>	
+	<div>
+	  <p>
+	    <b>
+	      <br>
+	      Friends' Stations:
+	    </b>
+	  </p>
+	</div>	
 
-<div><p><a href="main.php?station=20">Ngaio's station</a></p></div><div><p><a href="main.php?station=19">Random's station</a></p></div><div><p><a href="main.php?station=13">Tom's station</a></p></div><div><p><b><br>Official Stations:</b></p></div><div><p><a href="main.php?station=30"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></a></p></div><div><p><a href="main.php?station=31"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/5live.gif"></a></p></div><div><p><a href="main.php?station=32"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio7.gif"></a></p></div><div><p><a href="main.php?station=33"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/worldservice.gif"></a></p></div>
+<% @favourites.each do |favourite_channel| %>
+
+
+    <div class="<%= find_channel_class(favourite_channel.id) %>">
+      <p>
+       <% if (find_channel_class(favourite_channel.id).eql?("unselectedstation")) %>
+         <%= link_to favourite_channel.name, "/vox/#{favourite_channel.id}" %>
+       <% else %>
+         <b>
+          <%= favourite_channel.name %>       
+         </b>
+       <% end %>
+      </p>
+    </div>
+
+
+<% end %>
+  
+
+
+
+
+<div><p><b><br>Official Stations:</b></p></div><div><p><a href="main.php?station=30"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio4.gif"></a></p></div><div><p><a href="main.php?station=31"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/5live.gif"></a></p></div><div><p><a href="main.php?station=32"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/radio7.gif"></a></p></div><div><p><a href="main.php?station=33"><img src="http://www.bbc.co.uk/programmes/r/42070/images/_programmes/service_icons/66x37/worldservice.gif"></a></p></div>
 </div>
 
 

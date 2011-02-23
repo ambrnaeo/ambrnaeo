@@ -2,6 +2,7 @@ Ambrnaeo::Application.routes.draw do
   
   resources :users
   resources :sessions, :only => [ :new, :create, :destroy ]
+  resources :channels
   
   match "/signup", :to => 'users#new'
   match '/contact', :to => 'pages#contact'
@@ -9,6 +10,7 @@ Ambrnaeo::Application.routes.draw do
   match '/vox', :to => 'pages#vox'
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/vox/:current_channel_id', :to => 'pages#vox'
   
   get "pages/home"
   get "pages/contact"

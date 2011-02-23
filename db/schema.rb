@@ -10,11 +10,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110211003617) do
+ActiveRecord::Schema.define(:version => 20110216234513) do
+
+  create_table "channels", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favourites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "channel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "progpositions", :force => true do |t|
+    t.integer  "channel_id"
+    t.integer  "programme_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programmes", :force => true do |t|
+    t.string   "title"
+    t.string   "pid"
+    t.string   "short_synopsis"
+    t.string   "medium_synopsis"
+    t.string   "long_synopsis"
+    t.integer  "duration"
+    t.string   "image_url"
+    t.string   "source_radio_station"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.integer  "channel_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password"

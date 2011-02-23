@@ -1,11 +1,11 @@
-class PagesController < ApplicationController
-  before_filter :authenticate, :only => [:vox]
+class ChannelsController < ApplicationController
   
-  def home
-    @title = "HOME"
+  def index
+    @title = "Channels"
+    @channels = Channel.find(:all)
   end
   
-  def vox
+  def show
     @user = current_user
     @current_channel = Channel.find_by_id(params[:current_channel_id])
     if @current_channel.nil?
@@ -16,21 +16,7 @@ class PagesController < ApplicationController
     @favourites = all_channels.find_all do |channel|
       channel != @user.channel
     end
-    @programmes = @current_channel.programmes
-  end
-
-  def contact
-    @title = "CONTACT"
-  end
-
-  def about
-    @title = "ABOUT"
+    @programmes = @current_channel.programmes    
   end
   
-  private
-  
-    def authenticate
-      deny_access unless signed_in?
-    end
-
 end

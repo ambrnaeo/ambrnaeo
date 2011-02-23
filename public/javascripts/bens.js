@@ -296,3 +296,31 @@ function dislike() {
   http.send(null);
   update();
 }
+
+
+
+function hideOnLoad(element) {
+	document.getElementById(element).style.display = "none";
+}
+
+function showOnLoad(element) {
+	document.getElementById(element).style.display = "";
+}
+
+function toggle(element,element2,element3) {
+	if (document.getElementById(element).style.display == "none") {
+		document.getElementById(element).style.display = "";
+	} else {
+		document.getElementById(element).style.display = "none";
+	}
+	if (document.getElementById(element2).style.display == "none") {
+		document.getElementById(element2).style.display = "";
+	} else {
+		document.getElementById(element2).style.display = "none";
+	}
+	if (document.getElementById(element3).style.display == "none") {
+		document.getElementById(element3).style.display = "";
+	} else {
+		document.getElementById(element3).style.display = "none";
+	}
+}

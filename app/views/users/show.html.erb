@@ -2,3 +2,7 @@
   <%= @user.name %>
 </h1>
 <%= link_to user_path(@user), @user %> (<%= @user.email %>)
+
+<br/>
+<%= @user.channel.name %><br/>
+<%= @user.channel.image %><br/>

@@ -45,5 +45,22 @@ describe PagesController do
     end
     
   end
+  
+  describe "authentication of vox" do
+    
+    before(:each) do
+      @user = Factory(:user)
+    end
+    
+    describe "for non-signed-in users" do
+      
+      it "should deny access to 'vox'" do
+        get :vox, :id => @user
+        response.should redirect_to(signin_path)
+      end
+      
+    end
+    
+  end
 
 end

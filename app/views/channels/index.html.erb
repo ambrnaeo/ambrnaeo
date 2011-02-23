@@ -1,0 +1,11 @@
+<div id="channels">
+  <% @channels.each do |channel| %>
+  
+    <div id="channel_<%= channel.id.to_s %>">
+      Name: <%= channel.name %><br/>
+      Image: <%= channel.image %><br/>
+      Description: <%= channel.description %><br/>
+    </div>
+  
+  <% end %>
+</div>
